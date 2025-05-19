@@ -3,7 +3,7 @@
 - 「あなたのブックメーカー」(Your Book Maker-NOVELSMITH)demo
 - 「NOVELSMITH」(ノベルスミス) - 物語を鍛冶屋のように創り出す
 
-# オリジナルの本作成アプリ
+# オリジナルの本作成アプリ MVP
 
 - 文章生成 機能
 
@@ -28,7 +28,7 @@
 
 - 出版と共有
   - 完成した絵本を PDF 形式でダウンロードできる機能
-  - オンラインで共有できる機能
+  <!-- - オンラインで共有できる機能 -->
 
 # flow
 
@@ -48,6 +48,15 @@
 - npx shadcn@latest add checkbox
 - npx shadcn@latest add alert
 - npx shadcn@latest add dropdown-menu
+
+# 技術スタック
+
+- フロントエンド：Next.js、TypeScript、Tailwind CSS、shadcn/ui
+- バックエンド：Next.js（App Router）、Server Component/Actions
+- データベース：Supabase（PostgreSQL）
+- ORM：Prisma
+- API 連携：OpenAI API、DALL-E API
+- PDF 生成：react-pdf または jsPDF
 
 # デザイン
 
