@@ -62,3 +62,9 @@
 # デザイン
 
 - https://www.dot-st.com/studioclip/cp/sc2025adomizumori/
+
+# memo
+
+- 物語を作って、イラストを作って最後に本にする
+- その最小限の MVP を開発する。
+- 対象は 1 歳から 4 歳くらいの子供。
