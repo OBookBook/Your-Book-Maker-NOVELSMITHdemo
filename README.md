@@ -36,3 +36,5 @@
 - npx shadcn@latest init
 - npx shadcn@latest add button
 - npx shadcn@latest add card
+- npx shadcn@latest add form
+- npx shadcn@latest add input
