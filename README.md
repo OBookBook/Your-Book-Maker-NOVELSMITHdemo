@@ -39,3 +39,4 @@
 - npx shadcn@latest add form
 - npx shadcn@latest add input
 - npx shadcn@latest add textarea
+- npx shadcn@latest add select
