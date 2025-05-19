@@ -52,12 +52,25 @@
 
 # 技術スタック
 
-- フロントエンド：Next.js、TypeScript、Tailwind CSS、shadcn/ui
-- バックエンド：Next.js（App Router）、Server Component/Actions
+- 言語：TypeScript
+- フレームワーク：Next.js（App Router）
+- スタイリング：Tailwind CSS
+- UI コンポーネント：shadcn/ui
+- サーバーサイド実装：Server Components、Server Actions
 - データベース：Supabase（PostgreSQL）
 - ORM：Prisma
-- API 連携：OpenAI API、DALL-E API
-- PDF 生成：react-pdf または jsPDF
+- 型検証：Zod
+- AI 文章生成：OpenAI API（GPT-4）
+- AI 画像生成：DALL-E API
+- PDF 生成：react-pdf
+- ユニットテスト：Vitest
+- E2E テスト：Playwright
+- コンポーネント開発：Storybook
+- リンター：ESLint
+- コードフォーマッター：Prettier
+- Git フック：Husky
+- CI/CD：GitHub Actions
+- ホスティング：Vercel
 
 # デザイン
 
