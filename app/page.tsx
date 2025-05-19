@@ -128,39 +128,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 固定された装飾要素 - 装飾要素 */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        {[
-          { color: "text-gray-200", top: "10%", left: "15%" },
-          { color: "text-gray-300", top: "15%", right: "10%" },
-          { color: "text-gray-400", top: "40%", left: "5%" },
-          { color: "text-gray-200", bottom: "20%", right: "15%" },
-          { color: "text-gray-300", bottom: "30%", left: "20%" },
-          { color: "text-gray-400", top: "35%", right: "5%" },
-        ].map((dot, index) => (
-          <div
-            key={index}
-            className={`absolute ${dot.color}`}
-            style={{
-              top: dot.top,
-              left: dot.left,
-              right: dot.right,
-              bottom: dot.bottom,
-            }}
-          >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="12" cy="12" r="4" />
-            </svg>
-          </div>
-        ))}
-      </div>
-
       {/* 中央のスクロール可能なコンテナ */}
       <div className="relative mx-auto max-w-3xl px-4 py-12 lg:py-24 z-20">
         {/* メイン画像とタイトルのコンテナ */}
@@ -184,20 +151,12 @@ export default function Home() {
               </TabsList>
             </div>
 
-            <div className="relative w-full h-[500px] bg-gray-200 flex items-center justify-center">
-              <svg
-                className="w-16 h-16 text-gray-400"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1}
-                  d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-                />
-              </svg>
+            <div className="relative w-full h-[500px] bg-gray-200 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+                alt="本の画像"
+                className="w-full h-full object-cover"
+              />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black to-transparent py-10">
                 <h2 className="text-6xl font-bold text-white text-center">
                   NOVELSMITH
