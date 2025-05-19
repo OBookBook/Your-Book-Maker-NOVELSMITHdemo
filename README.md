@@ -43,3 +43,9 @@
 - npx shadcn@latest add dialog
 - npx shadcn@latest add tabs
 - npx shadcn@latest add avatar
+- npx shadcn@latest add badge
+- npx shadcn@latest add separator
+
+# デザイン
+
+- https://www.dot-st.com/studioclip/cp/sc2025adomizumori/
