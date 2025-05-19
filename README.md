@@ -41,3 +41,4 @@
 - npx shadcn@latest add textarea
 - npx shadcn@latest add select
 - npx shadcn@latest add dialog
+- npx shadcn@latest add tabs
