@@ -42,3 +42,4 @@
 - npx shadcn@latest add select
 - npx shadcn@latest add dialog
 - npx shadcn@latest add tabs
+- npx shadcn@latest add avatar
