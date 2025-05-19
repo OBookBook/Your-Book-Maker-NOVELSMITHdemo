@@ -30,16 +30,28 @@ export default function ImageCreator() {
       const parsedData = JSON.parse(data);
       setStoryData(parsedData);
 
+      // 登場人物を含めた強化プロンプトを生成
+      let characterDescription = `${parsedData.mainCharacter}が主人公`;
+
+      if (parsedData.friendName)
+        characterDescription += `、友達の${parsedData.friendName}も登場`;
+
+      if (parsedData.familyMember)
+        characterDescription += `、${parsedData.familyMember}も登場`;
+
+      if (parsedData.pet)
+        characterDescription += `、ペットの${parsedData.pet}も登場`;
+
       // プロンプトを自動生成
-      const suggestedPrompt = `${parsedData.mainCharacter}が主人公の、「${
+      const suggestedPrompt = `${characterDescription}の、「${
         parsedData.theme
       }」についての子ども向け絵本のイラスト。${
         parsedData.setting ? `場所は${parsedData.setting}。` : ""
       }明るく優しい色彩で、1〜4歳の子供向け。`;
+
       setPrompt(suggestedPrompt);
     }
   }, []);
-
   const handleGenerateImage = async () => {
     if (!prompt) return;
 

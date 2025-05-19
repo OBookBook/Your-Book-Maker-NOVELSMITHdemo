@@ -20,6 +20,9 @@ export default function StoryCreator() {
   const [theme, setTheme] = useState("");
   const [mainCharacter, setMainCharacter] = useState("");
   const [setting, setSetting] = useState("");
+  const [friendName, setFriendName] = useState("");
+  const [familyMember, setFamilyMember] = useState("");
+  const [pet, setPet] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [generatedStory, setGeneratedStory] = useState("");
 
@@ -35,6 +38,9 @@ export default function StoryCreator() {
           theme,
           mainCharacter,
           setting,
+          friendName,
+          familyMember,
+          pet,
           ageGroup: "1-4歳",
         }),
       });
@@ -50,6 +56,9 @@ export default function StoryCreator() {
             theme,
             mainCharacter,
             setting,
+            friendName,
+            familyMember,
+            pet,
             story: data.story,
           })
         );
@@ -90,16 +99,47 @@ export default function StoryCreator() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-medium">主人公の名前</label>
+              <label className="text-sm font-medium">
+                子供の名前（主人公）
+              </label>
               <Input
-                placeholder="主人公の名前を入力してください"
+                placeholder="子供の名前を入力してください"
                 value={mainCharacter}
                 onChange={(e) => setMainCharacter(e.target.value)}
               />
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-medium">物語の設定</label>
+              <label className="text-sm font-medium">友達の名前（任意）</label>
+              <Input
+                placeholder="例: お友達の名前"
+                value={friendName}
+                onChange={(e) => setFriendName(e.target.value)}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-sm font-medium">家族の名前（任意）</label>
+              <Input
+                placeholder="例: ママ、パパ、おじいちゃんなど"
+                value={familyMember}
+                onChange={(e) => setFamilyMember(e.target.value)}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-sm font-medium">
+                ペットの名前と種類（任意）
+              </label>
+              <Input
+                placeholder="例: ポチ（犬）、タマ（猫）"
+                value={pet}
+                onChange={(e) => setPet(e.target.value)}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-sm font-medium">物語の舞台</label>
               <Textarea
                 placeholder="例: お家、公園、どうぶつの森"
                 value={setting}

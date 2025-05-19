@@ -7,13 +7,33 @@ const openai = new OpenAI({
 
 export async function POST(req: Request) {
   try {
-    const { theme, mainCharacter, setting, ageGroup } = await req.json();
+    const {
+      theme,
+      mainCharacter,
+      setting,
+      friendName,
+      familyMember,
+      pet,
+      ageGroup,
+    } = await req.json();
+
+    // 追加キャラクターの情報を準備
+    const additionalCharacters = [];
+    if (friendName) additionalCharacters.push(`友達: ${friendName}`);
+    if (familyMember) additionalCharacters.push(`家族: ${familyMember}`);
+    if (pet) additionalCharacters.push(`ペット: ${pet}`);
+
+    const additionalCharactersText =
+      additionalCharacters.length > 0
+        ? `登場人物:\n${additionalCharacters.join("\n")}`
+        : "";
 
     const prompt = `
 1〜4歳の子供向けの短い絵本の物語を作成してください。
 テーマ: ${theme}
-主人公: ${mainCharacter}
+主人公: ${mainCharacter}（子供）
 舞台設定: ${setting || "特になし"}
+${additionalCharactersText}
 対象年齢: ${ageGroup}
 
 以下の条件に従ってください:
@@ -24,6 +44,10 @@ export async function POST(req: Request) {
 - ポジティブな結末にする
 - 教育的な要素を含める（数、色、感情など）
 - 絵本として読み聞かせやすいリズム感
+- 主人公の名前（${mainCharacter}）を物語の中で何度か使ってください
+${friendName ? `- 友達の${friendName}を物語に登場させてください` : ""}
+${familyMember ? `- ${familyMember}を物語に登場させてください` : ""}
+${pet ? `- ペットの${pet}を物語に登場させてください` : ""}
 `;
 
     const completion = await openai.chat.completions.create({
