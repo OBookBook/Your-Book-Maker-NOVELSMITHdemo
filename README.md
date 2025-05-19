@@ -45,6 +45,9 @@
 - npx shadcn@latest add avatar
 - npx shadcn@latest add badge
 - npx shadcn@latest add separator
+- npx shadcn@latest add checkbox
+- npx shadcn@latest add alert
+- npx shadcn@latest add dropdown-menu
 
 # デザイン
 
