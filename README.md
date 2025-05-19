@@ -71,6 +71,7 @@
 - Git フック：Husky
 - CI/CD：GitHub Actions
 - ホスティング：Vercel
+- モニタリング: Sentry
 
 # デザイン
 
