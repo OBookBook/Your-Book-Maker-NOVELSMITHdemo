@@ -38,3 +38,4 @@
 - npx shadcn@latest add card
 - npx shadcn@latest add form
 - npx shadcn@latest add input
+- npx shadcn@latest add textarea
