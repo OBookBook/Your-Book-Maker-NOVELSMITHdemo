@@ -130,7 +130,7 @@ export default function PublishPage() {
 
         <div className="flex justify-center mt-8">
           <Button variant="outline" asChild>
-            <Link href="/create">編集に戻る</Link>
+            <Link href="/">編集に戻る</Link>
           </Button>
         </div>
       </div>
