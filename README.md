@@ -17,7 +17,7 @@
 
 - Web アプリの構築
 
-  - フロントエンドには Next.js、TypeScript を使用し、ユーザーインターフェースを作成します。
+  - フロントエンドには Next.js、TypeScript、Tailwind CSS、shadcn/ui を使用し、ユーザーインターフェースを作成します。
   - バックエンドは、 Next.js、TypeScript、PrismaORM を使用して、AI モデルとの通信やデータの保存を行います。
   - DB は Supsbse を使用してください
 
@@ -33,3 +33,4 @@
 # flow
 
 - npx create-next-app@latest
+- npx shadcn@latest init
