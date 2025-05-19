@@ -29,3 +29,7 @@
 - 出版と共有
   - 完成した絵本を PDF 形式でダウンロードできる機能
   - オンラインで共有できる機能
+
+# flow
+
+- npx create-next-app@latest
