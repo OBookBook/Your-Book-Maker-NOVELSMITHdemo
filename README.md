@@ -126,3 +126,7 @@
 # リリース後
 
 - 好評であれば、ページ数を増やす
+
+# コスト
+
+- open AI : https://platform.openai.com/settings/organization/billing/overview
