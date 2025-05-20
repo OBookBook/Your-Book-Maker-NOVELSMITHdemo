@@ -48,7 +48,7 @@
 - npx shadcn@latest add checkbox
 - npx shadcn@latest add alert
 - npx shadcn@latest add dropdown-menu
-- npm install openai
+- npm install openai ※ OpenAI の公式サイト（https://openai.com）にアクセス
 
 # 技術スタック
 
