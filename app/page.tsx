@@ -356,7 +356,7 @@ export default function Home() {
           <div className="relative">
             <Avatar className="w-[200px] h-[250px] rounded-none mx-auto mb-4">
               <AvatarImage
-                src="/profile.png"
+                src="/avatar.png"
                 alt="ノベルスミス"
                 className="object-cover"
               />
