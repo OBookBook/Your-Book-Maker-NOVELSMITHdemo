@@ -50,19 +50,37 @@ ${familyMember ? `- ${familyMember}を物語に登場させてください` : ""
 ${pet ? `- ペットの${pet}を物語に登場させてください` : ""}
 `;
 
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4-turbo",
-      messages: [
-        { role: "system", content: "あなたは幼児向け絵本の専門家です。" },
-        { role: "user", content: prompt },
-      ],
-      temperature: 0.7,
-      max_tokens: 500,
-    });
+    try {
+      const completion = await openai.chat.completions.create({
+        model: "gpt-3.5-turbo", // gpt-4-turboからより安価なモデルに変更
+        messages: [
+          { role: "system", content: "あなたは幼児向け絵本の専門家です。" },
+          { role: "user", content: prompt },
+        ],
+        temperature: 0.7,
+        max_tokens: 500,
+      });
 
-    const story = completion.choices[0].message.content;
+      const story = completion.choices[0].message.content;
+      return NextResponse.json({ story });
+    } catch (apiError: any) {
+      console.error("OpenAI API error:", apiError);
 
-    return NextResponse.json({ story });
+      // APIクォータエラーの場合
+      if (apiError.code === "insufficient_quota") {
+        return NextResponse.json(
+          {
+            error: "APIの利用制限に達しました。管理者にお問い合わせください。",
+            details:
+              "OpenAIのクォータ制限に達しました。APIキーの確認やプランのアップグレードが必要です。",
+          },
+          { status: 429 }
+        );
+      }
+
+      // その他のAPIエラー
+      throw apiError;
+    }
   } catch (error) {
     console.error("Story generation failed:", error);
     return NextResponse.json(
