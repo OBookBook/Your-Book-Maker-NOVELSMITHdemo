@@ -15,9 +15,20 @@ import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
 import Image from "next/image";
 
+// ストーリーデータの型定義
+interface StoryData {
+  theme?: string;
+  mainCharacter?: string;
+  setting?: string;
+  friendName?: string;
+  familyMember?: string;
+  pet?: string;
+  story?: string;
+}
+
 export default function ImageCreator() {
   const router = useRouter();
-  const [storyData, setStoryData] = useState(null);
+  const [storyData, setStoryData] = useState<StoryData | null>(null);
   const [prompt, setPrompt] = useState("");
   const [style, setStyle] = useState("明るく優しいタッチ、子供向け絵本風");
   const [isLoading, setIsLoading] = useState(false);
@@ -76,7 +87,10 @@ export default function ImageCreator() {
             JSON.stringify({
               ...storyData,
               imageUrl: data.imageUrl,
-              title: `${storyData.mainCharacter}の${storyData.theme}`,
+              title:
+                storyData.mainCharacter && storyData.theme
+                  ? `${storyData.mainCharacter}の${storyData.theme}`
+                  : "新しい絵本",
             })
           );
         }

@@ -30,7 +30,17 @@ ${prompt}
       style: "vivid",
     });
 
+    // response.dataが存在するか確認
+    if (!response.data || response.data.length === 0) {
+      throw new Error("画像生成に失敗しました。データが返されませんでした。");
+    }
+
     const openaiImageUrl = response.data[0].url;
+
+    // openaiImageUrlがundefinedでないことを確認
+    if (!openaiImageUrl) {
+      throw new Error("画像URLが生成されませんでした。");
+    }
 
     // 画像をダウンロード
     const imageResponse = await fetch(openaiImageUrl);
