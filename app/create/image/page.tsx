@@ -172,6 +172,14 @@ export default function ImageCreator() {
             </CardFooter>
           </Card>
         )}
+
+        {imageUrl && (
+          <div className="mt-4 flex justify-center">
+            <Button variant="outline" asChild>
+              <Link href="/read">絵本を読む</Link>
+            </Button>
+          </div>
+        )}
       </div>
     </main>
   );

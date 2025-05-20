@@ -70,11 +70,16 @@ export default function PublishPage() {
             <CardDescription>あなたの作品をプレビューできます</CardDescription>
           </CardHeader>
           <CardContent className="flex justify-center">
-            {/* プレビュー表示エリア - ここには実際のプレビューUIが入ります */}
-            <div className="border border-dashed border-muted-foreground rounded-md p-8 w-full h-64 flex items-center justify-center">
-              <p className="text-muted-foreground">
-                プレビューはここに表示されます
-              </p>
+            {/* プレビュー表示エリア - 実際のプレビューUIに改善 */}
+            <div className="w-full flex flex-col items-center space-y-4">
+              <div className="border rounded-md p-4 w-full text-center">
+                <p className="text-muted-foreground mb-2">
+                  以下のリンクをクリックして絵本を読むことができます
+                </p>
+                <Button asChild>
+                  <Link href="/read">絵本を読む</Link>
+                </Button>
+              </div>
             </div>
           </CardContent>
         </Card>
