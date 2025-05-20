@@ -47,6 +47,8 @@ export default function ImageCreator() {
         parsedData.theme
       }」についての子ども向け絵本のイラスト。${
         parsedData.setting ? `場所は${parsedData.setting}。` : ""
+      }${
+        parsedData.story ? `ストーリー:「${parsedData.story}」` : ""
       }明るく優しい色彩で、1〜4歳の子供向け。`;
 
       setPrompt(suggestedPrompt);
